@@ -13,9 +13,10 @@ program
     .command( 'start' )
     .alias( 's' )
     .description( 'Start process for hero generator' )
-    .action(() => {
-        let action = listActions();
-        actionsHandler( action );
+    .action( async () => {
+        let action = await listActions();
+        console.log( action );
+        //actionsHandler( action );
     });
 
 program
