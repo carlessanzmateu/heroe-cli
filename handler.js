@@ -3,7 +3,7 @@
 const program = require( 'commander' );
 const { prompt } = require( 'inquirer' );
 const { sayHello, copyMessage } = require( './logic' );
-const { actions, actionsHandler } = require( './actions.controller' );
+const { listActions, actionsHandler } = require( './actions.controller' );
 
 program
     .version( '0.1.0' )
@@ -14,7 +14,7 @@ program
     .alias( 's' )
     .description( 'Start process for hero generator' )
     .action(() => {
-        let action = createName();
+        let action = listActions();
         actionsHandler( action );
     });
 
